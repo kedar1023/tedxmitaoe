@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nishad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+    
+        body{
+            overflow: hidden;
+        }
+        body,html{
+            height: 100%;
+        }
+        body{
+            font-family: tahoma;
+            color: #111;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .container{
+            width: 224px;
+            perspective: 1000px;
+        }
+
+        .cube{
+            margin: auto;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transition: transform 2s ease;
+        }
+
+        .cube:hover{
+            transform: rotateX(180deg) rotateY(720deg);
+        }
+
+        .side{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .side.back{
+            transform: translateZ(-100px) rotateX(180deg);
+        }
+
+        
+        .side.left{
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+
+        .side.right{
+            transform: translateX(100px) rotateY(90deg);
+        }
+
+        .side.front{
+            transform: translateZ(100px);
+        }
+
+        .side.top{
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .side.bottom{
+            transform: translateY(100px) rotateX(90deg);
+        }
+
+        .side .t1{
+            margin: 30% auto;
+            margin-top: 20%;
+            vertical-align: middle;
+            font-size: 84px;
+        }
+
+        .side.grey{
+            color:white;
+            background-color: red;
+        }
+
+        .side.black{
+            color: red;
+            background-color: white;
+        }
+
+        .t2{
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container" id="days">
+        
+    </div>
+
+
+
+    <div class="container" id="hours">
+       
+    </div>
+
+    <div class="container" id="minutes">  
+
+    </div>
+
+
+
+    <div class="container" id="seconds">
+      
+    </div>
+
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  
+  
+  
+  <script src="countdown.js"></script>
+  
+  <script type="text/javascript">
+  
+  $('#days').countdown('2020/1/18', function(event){
+      var $this = $(this).html(event.strftime(''
+        +'<div class="cube">'
+
+            +'<div class="side back black">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+        
+            +'<div class="side left grey">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+
+            +'<div class="side front black">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+        
+            +'<div class="side right grey">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+        
+            +'<div class="side top black">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+        
+            +'<div class="side bottom black">'
+                +'<div class="t1"><span>%d<br></span><div class="t2">Days</div></div>'
+            +'</div>'
+        
+        +'</div>'
+      ))
+  
+  });
+
+  </script>
+
+
+
+
+<script type="text/javascript">
+  
+    $('#hours').countdown('2020/1/1', function(event){
+        var $this = $(this).html(event.strftime(''
+          +'<div class="cube">'
+  
+              +'<div class="side back black">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+          
+              +'<div class="side left grey">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+  
+              +'<div class="side front black">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+          
+              +'<div class="side right grey">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+          
+              +'<div class="side top black">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+          
+              +'<div class="side bottom black">'
+                  +'<div class="t1"><span>%H<br></span><div class="t2">HOURS</div></div>'
+              +'</div>'
+          
+          +'</div>'
+        ))
+    
+    });
+  
+    </script>
+
+ 
+
+
+
+
+
+<script type="text/javascript">
+  
+    $('#minutes').countdown('2020/1/1', function(event){
+        var $this = $(this).html(event.strftime(''
+          +'<div class="cube">'
+  
+              +'<div class="side back black">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+          
+              +'<div class="side left grey">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+  
+              +'<div class="side front black">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+          
+              +'<div class="side right grey">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+          
+              +'<div class="side top black">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+          
+              +'<div class="side bottom black">'
+                  +'<div class="t1"><span>%M<br></span><div class="t2">MIN</div></div>'
+              +'</div>'
+          
+          +'</div>'
+        ))
+    
+    });
+  
+    </script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+    $('#seconds').countdown('2020/1/1', function(event){
+        var $this = $(this).html(event.strftime(''
+          +'<div class="cube">'
+  
+              +'<div class="side back black">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+          
+              +'<div class="side left grey">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+  
+              +'<div class="side front black">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+          
+              +'<div class="side right grey">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+          
+              +'<div class="side top black">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+          
+              +'<div class="side bottom black">'
+                  +'<div class="t1"><span>%S<br></span><div class="t2">SEC</div></div>'
+              +'</div>'
+          
+          +'</div>'
+        ))
+    
+    });
+  
+    </script>
+
+
+
+</body>
+</html>
